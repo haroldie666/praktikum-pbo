@@ -9,7 +9,7 @@ bank_fakultas = BankDarah("Cabang Fakultas", 5)
 
 petugas1 = Petugas("Joko Anwar", "PTG-001")
 petugas2 = Petugas("Yoga Ananda", "PTG-002")
-petugas2 = Petugas("Yoga Ananda", "PTG-003")
+petugas3 = Petugas("Dapupu", "PTG-003")
 
 donor1 = Pendonor("Senku", 19, "O", "98712")
 donor2 = Pendonor("Kohaku", 16, "A", "12345")
@@ -67,3 +67,16 @@ try:
     petugas2.id_petugas = "ADMIN-02"
 except ValueError as e:
     print(f"Error : {e}")
+
+print("\nINFO CABANG BANK DARAH")
+bank_pusat.info_cabang()
+bank_fakultas.info_cabang()
+
+print("\nUPDATE DONASI GLOBAL")
+BankDarah.update_total_global(50)
+print(f"Total kantong darah global saat ini: {BankDarah.total_kantong_darah}")
+
+print("\nCEK VALIDASI FORMAT ID PETUGAS")
+print(f"Apakah 'PTG-999' valid? {Petugas.validasi_format_id('PTG-999')}")
+print(f"Apakah 'ADMIN-01' valid? {Petugas.validasi_format_id('ADMIN-01')}")
+print()
