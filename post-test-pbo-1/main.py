@@ -27,6 +27,8 @@ tabel_donor.field_names = ["KTP Pendonor", "Nama", "Umur", "Gol. Darah", "Status
 
 tabel_donor.add_row([donor1.ktp_pendonor, donor1.nama, donor1.umur, donor1.golongan_darah, "Layak" if donor1.umur >= Pendonor.umur_minimal else "Tidak Layak"])
 tabel_donor.add_row([donor2.ktp_pendonor, donor2.nama, donor2.umur, donor2.golongan_darah, "Layak" if donor2.umur >= Pendonor.umur_minimal else "Tidak Layak"])
+tabel_donor.add_row([donor3.ktp_pendonor, donor3.nama, donor3.umur, donor3.golongan_darah, "Layak" if donor3.umur >= Pendonor.umur_minimal else "Tidak Layak"])
+tabel_donor.add_row([donor4.ktp_pendonor, donor4.nama, donor4.umur, donor4.golongan_darah, "Layak" if donor4.umur >= Pendonor.umur_minimal else "Tidak Layak"])
 print(tabel_donor)
 print()
 
@@ -41,6 +43,7 @@ print()
 print("REKAPITULASI SISTEM")
 tabel_rekap = PrettyTable()
 tabel_rekap.field_names = ["Keterangan", "Total"]
+tabel_rekap.align["Keterangan"] = "l"
 tabel_rekap.add_row(["Total Kantong Darah Global", f"{BankDarah.total_kantong_darah} kantong"])
 tabel_rekap.add_row(["Total Pendonor Terdaftar", f"{Pendonor.total_pendonor} orang"])
 tabel_rekap.add_row(["Total Petugas Aktif", f"{Petugas.total_petugas} orang"])
@@ -52,7 +55,7 @@ print(f"KTP Pendonor {donor1.nama} berhasil diperbarui menjadi {donor1.ktp_pendo
 
 print("\nValidasi KTP pendonor yang salah")
 try:
-    donor1.ktp_pendonor = "DNR"
+    donor1.ktp_pendonor = "tes"
 except ValueError as e:
     print(f"Error : {e}")
 
@@ -77,6 +80,6 @@ BankDarah.update_total_global(50)
 print(f"Total kantong darah global saat ini: {BankDarah.total_kantong_darah}")
 
 print("\nCEK VALIDASI FORMAT ID PETUGAS")
-print(f"Apakah 'PTG-999' valid? {Petugas.validasi_format_id('PTG-999')}")
-print(f"Apakah 'ADMIN-01' valid? {Petugas.validasi_format_id('ADMIN-01')}")
+print(f"Apakah petugas dengan ID 'PTG-999' valid? {Petugas.validasi_format_id('PTG-999')}")
+print(f"Apakah petugas dengan ID 'ADMIN-01' valid? {Petugas.validasi_format_id('ADMIN-01')}")
 print()

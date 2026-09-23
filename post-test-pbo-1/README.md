@@ -142,7 +142,7 @@ Merepresentasikan admin/petugas yang melayani jalannya donor darah.
 ## Cara Menjalankan
 
 ### Prasyarat
-*Library* `prettytable` sudah terinstal. Jika belum, jalankan perintah berikut di terminal:
+Install *Library* `prettytable` jika belum ada dan jalankan perintah berikut di terminal:
   ```bash
   pip install prettytable
   ```

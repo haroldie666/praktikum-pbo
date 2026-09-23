@@ -23,7 +23,7 @@ class BankDarah:
         BankDarah.update_total_global(selisih)
 
     def info_cabang(self):
-        print(f"[{self.lokasi_cabang}] Stok {self.stok_darah}/{self.kapasitas_tampung} kantong.")
+        print(f"{self.lokasi_cabang} memiliki stok {self.stok_darah}/{self.kapasitas_tampung} kantong")
 
     @classmethod
     def update_total_global(cls, jumlah):

@@ -23,5 +23,5 @@ class Pendonor:
     def cek_kelayakan(self):
         if self.umur >= Pendonor.umur_minimal:
             return True
-        print(f"Maaf, {self.nama} umur pendonor minimal {Pendonor.umur_minimal} tahun")
+        print(f"Maaf {self.nama}, umur pendonor minimal {Pendonor.umur_minimal} tahun")
         return False
