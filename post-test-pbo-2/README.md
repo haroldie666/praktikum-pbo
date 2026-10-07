@@ -259,8 +259,8 @@ def umur(self):
 
 ```bash
 # 1. Clone repositori
-git clone <url-repositori-anda>
-cd <nama-folder-repositori>
+git clone https://github.com/haroldie666/praktikum-pbo.git
+cd praktikum-pbo
 
 # 2. Jalankan program
 python main.py
