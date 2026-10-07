@@ -44,7 +44,7 @@ Program ini mensimulasikan proses donor darah pada **Bank Darah Mulawarman**. Si
 
 ## 3. Relasi
 
-### 5.1 Asosiasi: Petugas menggunakan Pendonor dan BankDarah
+### 3.1 Asosiasi: Petugas menggunakan Pendonor dan BankDarah
 
 **Lokasi:** `petugas.py`, method `layani_donor()`
 
@@ -69,7 +69,7 @@ petugas1.layani_donor(donor1, bank_pusat)
 petugas2.layani_donor(donor2, bank_fakultas)
 ```
 
-### 5.2 Agregasi: BankDarah memiliki Petugas
+### 3.2 Agregasi: BankDarah memiliki Petugas
 
 **Lokasi:** `bank_darah.py`, atribut `_daftar_petugas` dan method `tambah_petugas()`
 
@@ -93,7 +93,7 @@ petugas1 = Petugas("joko_ptg", "Joko Anwar", 35, "PTG-001")   # dibuat di luar
 bank_pusat.tambah_petugas(petugas1)                           # dikirim ke penampung
 ```
 
-### 5.3 Komposisi: BankDarah terdiri dari CatatanDonasi
+### 3.3 Komposisi: BankDarah terdiri dari CatatanDonasi
 
 **Lokasi:** `bank_darah.py`, class `CatatanDonasi`, atribut `_riwayat_donasi`, dan method `_buat_catatan()`
 
@@ -120,7 +120,7 @@ def stok_darah(self, jumlah):
     BankDarah.update_total_global(selisih)
 ```
 
-### 5.4 Ringkasan Perbandingan
+### 3.4 Ringkasan Perbandingan
 
 | Aspek | Asosiasi | Agregasi | Komposisi |
 |---|---|---|---|
@@ -133,7 +133,7 @@ def stok_darah(self, jumlah):
 
 ## 4. Inheritance
 
-### 6.1 Superclass dan Subclass
+### 4.1 Superclass dan Subclass
 
 | Peran | Kelas | File |
 |---|---|---|
@@ -143,7 +143,7 @@ def stok_darah(self, jumlah):
 
 Uji "is-a": **Petugas adalah Pengguna** (benar) dan **Pendonor adalah Pengguna** (benar), sehingga inheritance tepat dipakai. Jenis pewarisan yang digunakan adalah **hierarchical inheritance**: satu superclass diwarisi oleh dua subclass.
 
-### 6.2 Penggunaan `super().__init__()`
+### 4.2 Penggunaan `super().__init__()`
 
 Kedua subclass memanggil konstruktor `Pengguna` untuk mengisi atribut bersama (`username`, `nama`, `umur`), lalu hanya mengisi atribut miliknya sendiri.
 
@@ -164,7 +164,7 @@ def __init__(self, username, nama, umur, golongan_darah, ktp_pendonor):
     self.ktp_pendonor = ktp_pendonor
 ```
 
-### 6.3 Atribut Tambahan Spesifik Subclass
+### 4.3 Atribut Tambahan Spesifik Subclass
 
 | Subclass | Atribut spesifik | Keterangan |
 |---|---|---|
@@ -174,7 +174,7 @@ def __init__(self, username, nama, umur, golongan_darah, ktp_pendonor):
 
 Atribut ini tidak dimiliki oleh `Pengguna` maupun subclass lainnya.
 
-### 6.4 Method Overriding
+### 4.4 Method Overriding
 
 Method `info_profil()` milik `Pengguna` ditimpa di kedua subclass dengan perilaku yang berbeda: menambahkan label peran dan atribut khusus masing-masing.
 
@@ -203,7 +203,7 @@ print(petugas1.info_profil())   # [Petugas] Joko Anwar (@joko_ptg) dengan ID: PT
 print(donor1.info_profil())     # [Pendonor] Senku (@senku123) | Gol Darah: O | KTP: 98712
 ```
 
-### 6.5 Tingkat Akses: Protected dan Private
+### 4.5 Tingkat Akses: Protected dan Private
 
 **Protected (`_`)** dipakai untuk data yang perlu diakses langsung oleh subclass.
 
@@ -241,7 +241,7 @@ def umur(self):
     return self._umur
 ```
 
-### 6.6 Ringkasan Pemenuhan Ketentuan
+### 4.6 Ringkasan Pemenuhan Ketentuan
 
 | Ketentuan | Status | Lokasi |
 |---|---|---|
