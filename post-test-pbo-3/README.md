@@ -1,4 +1,4 @@
-# Sistem Manajemen Donor Darah Bank Darah Mulawarman
+# Sistem Manajemen Donor Darah pada Bank Darah Mulawarman
 
 Program berbasis Object-Oriented Programming (OOP) menggunakan Python untuk menyimulasikan sistem pengelolaan pendonor, penugasan petugas, dan pencatatan stok kantong darah di fasilitas penyedia kesehatan.
 
@@ -182,7 +182,11 @@ Tidak ada rantai `if/elif` yang mengecek `type()` atau string jenis objek. Perbe
 
 ![Operator overloading, private, dan duck typing](gambar/duck_typing_solid.png)
 
-## 5. Nilai Plus: Penerapan SOLID
+**Konkret method:**
+
+![Metode konkret yang dipakai bersama oleh semua subclass](gambar/metode_konkret.png)
+
+## 5. Penerapan SOLID
 
 * **DIP (Dependency Inversion Principle):** `kirim_notifikasi_sistem(kanal_notifikasi, pengguna, pesan)` di `notifikasi.py` tidak membuat atau mengetahui kelas konkret `NotifikasiEmail`/`NotifikasiWA`. Kanal di-*inject* dari luar (`main.py`) dan fungsi hanya bergantung pada kontrak method `kirim_pesan()`. Pola serupa ada pada `Pendonor.lakukan_donor(bank_darah, volume)` yang menerima `BankDarah` lewat parameter.
 * **OCP (Open/Closed Principle):** kanal notifikasi baru (misalnya `NotifikasiTelegram`) cukup dibuat sebagai kelas baru dengan method `kirim_pesan()`, tanpa mengubah `kirim_notifikasi_sistem()` maupun kelas yang sudah ada.
