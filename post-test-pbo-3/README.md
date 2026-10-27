@@ -17,7 +17,7 @@ Program berbasis Object-Oriented Programming (OOP) menggunakan Python untuk meny
 **Cara menjalankan:**
 
 ```bash
-pip install -r requirements.txt   # library prettytable
+pip install prettytable 
 python main.py
 ```
 
